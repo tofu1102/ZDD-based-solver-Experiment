@@ -6,6 +6,7 @@ from timeout_decorator import timeout, TimeoutError
 import glob
 
 def main():
+    return
     already_calculated = set(glob.glob("results/*"))
 
     instances = get_all_benchmark_path.path_list()
@@ -24,4 +25,5 @@ def main():
             continue
 
 if __name__ == "__main__":
-    main()
+    ...
+    #main()

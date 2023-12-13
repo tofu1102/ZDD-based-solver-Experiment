@@ -25,4 +25,4 @@ def get_instance(graph_path, ans_path):
     return (vertices, edges, S, T)
 
 if __name__ == "__main__":
-    print(get_instance("2022benchmark-main/benchmark/color04/1-FullIns_3.col","2022benchmark-main/benchmark/color04/1-FullIns_3_01.dat"))
+    get_instance()
