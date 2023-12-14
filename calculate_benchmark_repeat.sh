@@ -1,7 +1,8 @@
 #!/bin/bash
 # 全部のインスタンスのうち、resultsにないものを実行して記録する
 # timeoutはエラーはいてもOKだけどほかのエラーは困る
-
+count=0
+t=$1
 while read row; do
   graph=`echo ${row} | cut -d , -f 1`
   sol=`echo ${row} | cut -d , -f 2`
@@ -9,17 +10,14 @@ while read row; do
   sol="2022benchmark-main/${sol}"
   graphpath="${graph}"
   solpath="${sol}"
-  graph=${graph//\//_}
-  sol=${sol//\//_}
-  graph=${graph//./_}
-  sol=${sol//./_}
   
   
-  if [ -e "results/${graph}_${sol}.csv" ]; then
+  if [ -e "results/${t}_${count}.csv" ]; then
     :
   else
-    python3 solve_ISR.py "${graphpath}" "${solpath}" "${graph}_${sol}"
-    python3 make_csv_from_log.py
+    python3 solve_ISR.py "${graphpath}" "${solpath}"
+    python3 make_csv_from_log.py "${t}_${count}"
     echo "results/${graph}_${sol}.csv"
   fi
+  ((count++))
 done < 2022benchmark-main/list/list-all-benchmark.csv

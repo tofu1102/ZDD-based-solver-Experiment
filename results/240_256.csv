@@ -1,0 +1,5 @@
+step,size,zdd,time
+0,IS,5.793571472167969e-05,2022benchmark-main/benchmark/handcrafted/hc-toyyes-01.col,2022benchmark-main/benchmark/handcrafted/hc-toyyes-01_01.dat
+1,2,5,0.038
+2,2,4,0.021
+3,0,0,

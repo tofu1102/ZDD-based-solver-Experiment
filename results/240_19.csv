@@ -1,0 +1,12 @@
+step,size,zdd,time
+0,IS,0.012828826904296875,2022benchmark-main/benchmark/color04/2-Insertions_3.col,2022benchmark-main/benchmark/color04/2-Insertions_3_02.dat
+1,2,32,0.06
+2,5,65,0.136
+3,6,66,0.125
+4,9,94,0.129
+5,4,59,0.164
+6,6,54,0.193
+7,4,51,0.113
+8,6,59,0.107
+9,2,30,0.15
+10

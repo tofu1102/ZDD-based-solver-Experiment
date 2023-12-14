@@ -1,7 +1,8 @@
 import csv
+import sys
 FILE_PATH = "ZDD_based_solver_log.txt"
 
-def make_csv_from_log():
+def make_csv_from_log(filename):
     header = ["step", "size", "zdd", "time"]
     with open(FILE_PATH, mode="r") as log:
         data = log.readlines()
@@ -12,7 +13,6 @@ def make_csv_from_log():
         #すでに読み取ったログは消去
         pass
 
-    filename = data.pop(0)[0]
     with open(f"results/{filename}.csv", mode="w") as f:
         print(",".join(header), file=f)
         for i, d in enumerate(data):
@@ -20,4 +20,4 @@ def make_csv_from_log():
           
 
 if __name__ == "__main__":
-    make_csv_from_log()
+    make_csv_from_log(sys.argv[1])

@@ -1,0 +1,5 @@
+step,size,zdd,time
+0,IS,1.2538576126098633,2022benchmark-main/benchmark/color04/queen8_8.col,2022benchmark-main/benchmark/color04/queen8_8_02.dat
+1,1,7,0.104
+2,1,7,0.061
+3,0,0,

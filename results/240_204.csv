@@ -1,0 +1,11 @@
+step,size,zdd,time
+0,IS,0.00022220611572265625,2022benchmark-main/benchmark/grid/grid004x004.col,2022benchmark-main/benchmark/grid/grid004x004_03.dat
+1,2,10,0.044
+2,5,19,0.035
+3,5,23,0.048
+4,9,44,0.058
+5,12,43,0.098
+6,20,51,0.107
+7,8,33,0.113
+8,13,39,0.073
+9
