@@ -5,7 +5,6 @@ from graphillion import reconf, setset
 from timeout_decorator import timeout, TimeoutError
 
 
-@timeout(240)
 def solve_ISR(vertices, edges, S, T, graph_path, sol_path):
     with open("ZDD_based_solver_log.txt", mode="a") as f:
 
@@ -26,8 +25,11 @@ if __name__ == "__main__":
     graph_path = sys.argv[1]
     sol_path = sys.argv[2]
     V, E, S, T = get_instance.get_instance(graph_path, sol_path)
+    @timeout(int(sys.argv[3]))
+    def _solve_ISR(V, E, S, T, graph_path, sol_path):
+        return solve_ISR(V, E, S, T, graph_path, sol_path)
     try:
-        solve_ISR(V, E, S, T, graph_path, sol_path)
+        _solve_ISR(V, E, S, T, graph_path, sol_path)
         with open("ZDD_based_solver_log.txt",mode="a") as f:
             f.write("Perfect!")
     except TimeoutError:
