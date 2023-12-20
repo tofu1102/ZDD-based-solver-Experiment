@@ -1,3 +1,4 @@
+#これはReconfillionのREADME．
 # reconf-graphillion ガイド(日本語版)
 
 ## Overview
