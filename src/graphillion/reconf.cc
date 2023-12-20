@@ -165,6 +165,10 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
 
     if (next_zdd.Card() == 0) {
       if (mode_ == ST) {
+        step_end_time = clock();
+        const double time = static_cast<double>(step_end_time - step_start_time) / CLOCKS_PER_SEC * 1000.0;
+        std::cout << "Step" << step << " time:" << time << std::endl;
+        outputfile << time << std::endl;
         outputfile.close();
         return -1;
       } else {  // mode_ == LONGEST

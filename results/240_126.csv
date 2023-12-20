@@ -1,7 +1,2 @@
 step,size,zdd,time
-0,IS,130.46343898773193,2022benchmark-main/benchmark/color04/miles750.col,2022benchmark-main/benchmark/color04/miles750_01.dat
-1,10,42,0.139
-2,24,70,0.656
-3,90,140,1.025
-4,317,242,2.508
-5
+0,unsolved

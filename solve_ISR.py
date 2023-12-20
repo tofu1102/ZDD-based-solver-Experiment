@@ -27,7 +27,9 @@ if __name__ == "__main__":
     sol_path = sys.argv[2]
     V, E, S, T = get_instance.get_instance(graph_path, sol_path)
     try:
-        print(len(solve_ISR(V, E, S, T, graph_path, sol_path)))
+        solve_ISR(V, E, S, T, graph_path, sol_path)
+        with open("ZDD_based_solver_log.txt",mode="a") as f:
+            f.write("Perfect!")
     except TimeoutError:
         with open("ZDD_based_solver_log.txt",mode="a") as f:
             f.write("unsolved")

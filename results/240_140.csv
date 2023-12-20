@@ -1,3 +1,5 @@
 step,size,zdd,time
-0,IS,0.039368391036987305,2022benchmark-main/benchmark/color04/myciel5.col,2022benchmark-main/benchmark/color04/myciel5_01.dat
-1,0,0,
+0,IS,0.027340173721313477,2022benchmark-main/benchmark/color04/myciel5.col,2022benchmark-main/benchmark/color04/myciel5_01.dat
+1,0,0,0.09
+2
+3,Perfect!

@@ -1,7 +1,9 @@
 step,size,zdd,time
-0,IS,91.93447637557983,2022benchmark-main/benchmark/color04/3-FullIns_3.col,2022benchmark-main/benchmark/color04/3-FullIns_3_02.dat
-1,2,66,0.277
-2,3,88,0.416
-3,4,117,0.537
-4,2,65,0.655
-5,0,0,
+0,IS,57.43420195579529,2022benchmark-main/benchmark/color04/3-FullIns_3.col,2022benchmark-main/benchmark/color04/3-FullIns_3_02.dat
+1,2,53,0.244
+2,3,68,0.493
+3,4,94,0.469
+4,2,62,0.59
+5,0,0,0.362
+6
+7,Perfect!

@@ -1,5 +1,7 @@
 step,size,zdd,time
-0,IS,0.00020766258239746094,2022benchmark-main/benchmark/grid/grid004x004.col,2022benchmark-main/benchmark/grid/grid004x004_01.dat
-1,1,7,0.042
-2,1,7,0.031
-3,0,0,
+0,IS,0.00021648406982421875,2022benchmark-main/benchmark/grid/grid004x004.col,2022benchmark-main/benchmark/grid/grid004x004_01.dat
+1,1,7,0.046
+2,1,7,0.029
+3,0,0,0.024
+4
+5,Perfect!

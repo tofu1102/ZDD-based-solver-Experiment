@@ -1,8 +1,9 @@
 step,size,zdd,time
-0,IS,24.232452630996704,2022benchmark-main/benchmark/color04/miles1000.col,2022benchmark-main/benchmark/color04/miles1000_02.dat
-1,48,84,0.194
-2,786,601,2.276
-3,5672,2542,48.227
-4,20214,6894,163.618
-5,40249,11339,516.337
+0,IS,30.356404304504395,2022benchmark-main/benchmark/color04/miles1000.col,2022benchmark-main/benchmark/color04/miles1000_02.dat
+1,48,88,0.167
+2,786,596,1.939
+3,5672,2527,21.027
+4,20214,6537,137.704
+5,40249,10154,405.667
 6
+7,Perfect!

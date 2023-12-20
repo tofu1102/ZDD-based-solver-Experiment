@@ -1,7 +1,9 @@
 step,size,zdd,time
-0,IS,42.58186101913452,2022benchmark-main/benchmark/color04/DSJC125.5.col,2022benchmark-main/benchmark/color04/DSJC125.5_02.dat
-1,1,9,0.188
-2,2,15,0.131
-3,1,9,0.197
-4,1,9,0.113
-5,0,0,
+0,IS,46.552410364151,2022benchmark-main/benchmark/color04/DSJC125.5.col,2022benchmark-main/benchmark/color04/DSJC125.5_02.dat
+1,1,9,0.184
+2,2,13,0.144
+3,1,9,0.247
+4,1,9,0.135
+5,0,0,0.111
+6
+7,Perfect!

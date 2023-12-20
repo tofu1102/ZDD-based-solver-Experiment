@@ -1,9 +1,10 @@
 step,size,zdd,time
-0,IS,4.929353952407837,2022benchmark-main/benchmark/color04/david.col,2022benchmark-main/benchmark/color04/david_01.dat
-1,21,249,0.242
-2,197,1090,1.84
-3,1101,3306,10.589
-4,4106,7598,37.433
-5,10814,13939,90.564
-6,20722,21004,340.632
+0,IS,45.88760018348694,2022benchmark-main/benchmark/color04/david.col,2022benchmark-main/benchmark/color04/david_01.dat
+1,21,275,0.239
+2,197,1069,2.025
+3,1101,2788,9.714
+4,4106,5486,36.964
+5,10814,8685,104.98
+6,20722,11561,235.154
 7
+8,Perfect!
