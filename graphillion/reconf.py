@@ -2,6 +2,7 @@ import _graphillion
 from graphillion import setset
 from graphillion.graphset import GraphSet
 import time
+import psutil
 
 
 def get_reconf_seq_ts(s, t, search_space, edges):
@@ -194,18 +195,22 @@ def get_independent_setset(vertices, edges, file = None):
 
     p = setset([set()])  # power set
     for v in vertices:
+        stepstart = time.time()
         f0 = p.copy()
         f1 = p.copy()
         f1.add(v)
         p = f0 | f1
+        print(f"iv,{time.time()-stepstart},")
     f = p.copy()
 
     for edge in edges:
         # (u, v) -> (not u or not v)
+        stepstart = time.time()
         u, v = edge[0], edge[1]
         u0, v0 = p.non_supersets(u), p.non_supersets(v)
         g = u0 | v0
         f &= g
+        print(f"ie,{time.time()-stepstart},")
 
     return f
 
