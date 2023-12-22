@@ -145,7 +145,7 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
 
     ZBDD next_zdd = getNextStep(F_[step - 1], previous_zdd);
     std::cout << "Step" << step << " size:" << next_zdd.Card() << std::endl;
-    outputfile << next_zdd.Card() << "," << next_zdd.Size() << ",";
+    outputfile <<"r," << next_zdd.Card() << "," << next_zdd.Size() << ",";
     F_.push_back(next_zdd);
 
     if (mode_ == ST) {
