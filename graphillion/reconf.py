@@ -1,6 +1,7 @@
 import _graphillion
 from graphillion import setset
 from graphillion.graphset import GraphSet
+import time
 
 
 def get_reconf_seq_ts(s, t, search_space, edges):
@@ -165,7 +166,7 @@ def get_longest_seq(s, search_space, method='tj', k=None):
         raise ValueError('unknown method')
 
 
-def get_independent_setset(vertices, edges):
+def get_independent_setset(vertices, edges, file = None):
     '''Returns the set of independent sets.
 
     Examples:
