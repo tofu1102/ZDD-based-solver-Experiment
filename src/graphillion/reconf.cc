@@ -5,12 +5,12 @@
 #include <time.h>
 #include <fstream>
 
-
 #include "graphillion/setset.h"
 #include "reconfutil.hpp"
 #include "subsetting/DdStructure.hpp"
 #include "subsetting/eval/ToZBDD.hpp"
 #include "subsetting/spec/SizeConstraint.hpp"
+
 
 Reconf::Reconf(BigIntegerRandom& random, int num_elements,
                bool is_edge_variable, bool show_info)
@@ -124,15 +124,12 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
   int step;
   clock_t step_start_time = clock();
   clock_t step_end_time = clock();
-  std::ofstream outputfile;
-  outputfile.open("ZDD_based_solver_log.txt", std::ios::app);
 
   for (step = 1;; ++step) {
     step_end_time = clock();
     const double time = static_cast<double>(step_end_time - step_start_time) / CLOCKS_PER_SEC * 1000.0;
     if (step != 1){
-      std::cout << "Step" << step - 1 << " time:" << time << std::endl;
-      outputfile << time << std::endl;
+      std::cout << time << std::endl;
     }
     step_start_time = clock();
     if (show_info_) {
@@ -144,8 +141,7 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
     }
 
     ZBDD next_zdd = getNextStep(F_[step - 1], previous_zdd);
-    std::cout << "Step" << step << " size:" << next_zdd.Card() << std::endl;
-    outputfile <<"r," << next_zdd.Card() << "," << next_zdd.Size() << ",";
+    std::cout <<"r," << next_zdd.Card() << "," << next_zdd.Size() << ",";
     F_.push_back(next_zdd);
 
     if (mode_ == ST) {
@@ -156,9 +152,7 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
         }
         step_end_time = clock();
         const double time = static_cast<double>(step_end_time - step_start_time) / CLOCKS_PER_SEC * 1000.0;
-        std::cout << "Step" << step << " time:" << time << std::endl;
-        outputfile << time << std::endl;
-        outputfile.close();
+        std::cout << time << std::endl;
         return step;
       }
     }
@@ -167,18 +161,14 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
       if (mode_ == ST) {
         step_end_time = clock();
         const double time = static_cast<double>(step_end_time - step_start_time) / CLOCKS_PER_SEC * 1000.0;
-        std::cout << "Step" << step << " time:" << time << std::endl;
-        outputfile << time << std::endl;
-        outputfile.close();
+        std::cout << time << std::endl;
         return -1;
       } else {  // mode_ == LONGEST
         // The goal set whose step is the longest is
         // in F_[step - 1] because F_[step] is empty.
         step_end_time = clock();
         const double time = static_cast<double>(step_end_time - step_start_time) / CLOCKS_PER_SEC * 1000.0;
-        std::cout << "Step" << step << " time:" << time << std::endl;
-        outputfile << time << std::endl;
-        outputfile.close();
+        std::cout << time << std::endl;
         return step - 1;
       }
     }

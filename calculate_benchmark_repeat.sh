@@ -15,8 +15,9 @@ while read row; do
   if [ -e "results/${t}_${count}.csv" ]; then
     :
   else
-    python3 solve_ISR.py "${graphpath}" "${solpath}" "${t}"
-    python3 make_csv_from_log.py "${t}_${count}"
+    touch results/${t}_${count}.csv
+    python3 solve_ISR.py "${graphpath}" "${solpath}" "${t}" > results/${t}_${count}.csv
+    #python3 make_csv_from_log.py "${t}_${count}"
     echo "results/${graph}_${sol}.csv"
   fi
   ((count++))

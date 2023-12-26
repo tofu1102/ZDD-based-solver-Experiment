@@ -200,7 +200,7 @@ def get_independent_setset(vertices, edges, file = None):
         f1 = p.copy()
         f1.add(v)
         p = f0 | f1
-        print(f"iv,{time.time()-stepstart},")
+        print(f"iv,{time.time()-stepstart},{psutil.virtual_memory().used}")
     f = p.copy()
 
     for edge in edges:
@@ -210,7 +210,7 @@ def get_independent_setset(vertices, edges, file = None):
         u0, v0 = p.non_supersets(u), p.non_supersets(v)
         g = u0 | v0
         f &= g
-        print(f"ie,{time.time()-stepstart},")
+        print(f"ie,{time.time()-stepstart},{psutil.virtual_memory().used}")
 
     return f
 
