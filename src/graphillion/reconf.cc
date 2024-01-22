@@ -124,6 +124,7 @@ int Reconf::reconfigure(const std::set<bddvar>& start_set) {
   int step;
   clock_t step_start_time = clock();
   clock_t step_end_time = clock();
+  std::cout << "rsol," << solution_space_zdd_.Card() << "," << solution_space_zdd_.Size() << std::endl;
 
   for (step = 1;; ++step) {
     step_end_time = clock();
