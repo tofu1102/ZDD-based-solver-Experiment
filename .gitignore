@@ -30,6 +30,7 @@ nosetests.xml
 # Translations
 *.mo
 /env/
+setup.cfg
 
 # Mr Developer
 .mr.developer.cfg
