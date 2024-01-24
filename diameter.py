@@ -50,7 +50,8 @@ if __name__ == "__main__":
     if int(no) not in PICK_UP:
         exit()
     V, E, S, _ = get_instance.get_instance(graph_path, sol_path)
-    print(f"{no},{diameter(V,E,S,graph_path,sol_path)}")
+    with open("diameter.txt", mode="a") as f:
+        print(f"{no},{diameter(V,E,S,graph_path,sol_path)}", file=f)
     
 
     
