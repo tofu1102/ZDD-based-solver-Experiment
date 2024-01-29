@@ -1,6 +1,20 @@
+PICK_UP = [
+        251,
+        252,
+        254,
+        257,
+        258,
+        325,
+        326,
+        328,
+        352,
+        353,
+        354,
+        355,
+        ]
 import sys
 
-def main(filepath):
+def main(filepath, no):
     """
     filepathを開いて
     instance_no,result,iv_time_max,iv_time_ave,iv_time_sum,iv_memory_max,iv_memory_ave,ie_time_max,ie_time_ave,ie_time_sum,ie_memory_max,ie_mamory_ave,IS_time,IS_size,zdd_size_max,zdd_size_ave,zdd_is_num_max,zdd_is_num_ave,reconf_time_max,reconf_time_ave,Reconf_time,reconf_step,z_sol_num,z_sol_zdd
@@ -45,6 +59,9 @@ def main(filepath):
             zdd_size_sum += int(size)
             reconf_time_max = max(reconf_time_max, float(time))
             Reconf_time += float(time)
+            if reconf_step == 10:
+                print(f"{no}, {zdd_size_max}")
+                return
 
         elif row[0] == "iv":
             _, time, memory = row
@@ -107,4 +124,7 @@ def main(filepath):
     print(",".join(map(str,res)))
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    filepath = sys.argv[1]
+    if int(filepath.split("_")[1].split(".")[0]) in PICK_UP:
+        no = int(filepath.split("_")[1].split(".")[0])
+        main(filepath,no)

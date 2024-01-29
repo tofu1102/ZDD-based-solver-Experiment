@@ -32,6 +32,8 @@ def main(filepath):
         reconf_step = 0
         z_sol_num = 0
         z_sol_zdd = 0
+        zdd_size_sq_sum = 0
+        max_count = 0
 
     for row in content:
         row = row.split(",")
@@ -41,10 +43,13 @@ def main(filepath):
             reconf_step += 1
             zdd_is_num_max = max(zdd_is_num_max,int(card))
             zdd_is_num_sum += int(card)
+            max_count = reconf_step if zdd_size_max < int(size) else max_count
             zdd_size_max = max(zdd_size_max,int(size))
             zdd_size_sum += int(size)
+            zdd_size_sq_sum += int(size)**2
             reconf_time_max = max(reconf_time_max, float(time))
             Reconf_time += float(time)
+
 
         elif row[0] == "iv":
             _, time, memory = row
@@ -102,7 +107,9 @@ def main(filepath):
                Reconf_time, 
                reconf_step,
                z_sol_num,
-               z_sol_zdd
+               z_sol_zdd,
+               (zdd_size_sq_sum/reconf_step - (zdd_size_sum/reconf_step)**2),
+               max_count
                ]
     print(",".join(map(str,res)))
 
