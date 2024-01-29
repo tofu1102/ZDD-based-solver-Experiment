@@ -30,9 +30,6 @@ def diameter(V,E,S,graph_path, sol_path):
     for s in iss:
         if not len(s) == len(S):
             continue
-        seq_from_s = reconf.get_reconf_seq_ts(S,s,iss,E)
-        if seq_from_s == None:
-            continue
         for t in iss:
             if s == t or len(s) != len(t):
                 continue
@@ -40,7 +37,7 @@ def diameter(V,E,S,graph_path, sol_path):
             if seq == None:
                 continue
             diameter = max(diameter,len(seq))
-    return diameter-1
+    return max(0,diameter-1)
 
 
 if __name__ == "__main__":
