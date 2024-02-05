@@ -9,7 +9,7 @@ y=[]
 z=[]
 
 for xyz in targetData:
-    x.append(xyz[4])
+    x.append(xyz[3])
     y.append(xyz[1])
     z.append(xyz[2])
 
