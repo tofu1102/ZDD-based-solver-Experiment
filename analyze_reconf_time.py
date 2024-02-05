@@ -49,6 +49,7 @@ def main(filepath):
             zdd_size_sq_sum += int(size)**2
             reconf_time_max = max(reconf_time_max, float(time))
             Reconf_time += float(time)
+            print(f'{instance_no.split("_")[1].split(".")[0]},{card},{size},{time}')
 
 
         elif row[0] == "iv":
@@ -111,7 +112,7 @@ def main(filepath):
                (zdd_size_sq_sum/reconf_step - (zdd_size_sum/reconf_step)**2),
                max_count
                ]
-    print(",".join(map(str,res)))
+    #print(",".join(map(str,res)))
 
 if __name__ == "__main__":
     main(sys.argv[1])

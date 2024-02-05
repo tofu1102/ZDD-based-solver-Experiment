@@ -3,7 +3,7 @@ import sys
 import get_instance
 from graphillion import reconf, setset
 from timeout_decorator import timeout, TimeoutError
-PICK_UP = [255, 256, 136, 322, 253, 202, 251, 138, 254, 168, 0, 170, 252, 18, 352, 140, 172, 12, 325, 353, 30, 176, 257, 274, 354, 326, 92, 355, 42, 258, 178, 88, 132, 328, 259, 143, 174, 128, 154, 207, 278, 281, 329, 36, 330, 90, 156, 56, 58, 120, 122, 124, 126, 80, 158, 362, 46, 263, 333, 264, 334, 265, 366, 145, 162, 266, 8, 368, 14, 267, 164, 268, 339, 340, 62, 64, 66, 167, 342, 32, 4, 343, 272, 344]
+PICK_UP = [259]
 def solve_ISR(vertices, edges, S, T, graph_path, sol_path):
     with open("ZDD_based_solver_log.txt", mode="a") as f:
 
