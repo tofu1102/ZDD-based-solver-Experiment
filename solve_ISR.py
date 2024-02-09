@@ -3,7 +3,7 @@ import sys
 import get_instance
 from graphillion import reconf, setset
 from timeout_decorator import timeout, TimeoutError
-PICK_UP = [259]
+
 def solve_ISR(vertices, edges, S, T, graph_path, sol_path):
     with open("ZDD_based_solver_log.txt", mode="a") as f:
 
@@ -25,6 +25,8 @@ if __name__ == "__main__":
     sol_path = sys.argv[2]
     no = int(sys.argv[4])
     V, E, S, T = get_instance.get_instance(graph_path, sol_path)
+    if V > 300:
+        exit()
     @timeout(int(sys.argv[3]))
     def _solve_ISR(V, E, S, T, graph_path, sol_path):
         return solve_ISR(V, E, S, T, graph_path, sol_path)
