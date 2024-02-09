@@ -24,8 +24,6 @@ if __name__ == "__main__":
     graph_path = sys.argv[1]
     sol_path = sys.argv[2]
     no = int(sys.argv[4])
-    if no not in PICK_UP:
-        exit(0)
     V, E, S, T = get_instance.get_instance(graph_path, sol_path)
     @timeout(int(sys.argv[3]))
     def _solve_ISR(V, E, S, T, graph_path, sol_path):

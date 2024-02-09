@@ -15,7 +15,8 @@ while read row; do
   if [ -e "results/${t}_${count}.csv" ]; then
     :
   else
-    touch results/${t}_${count}.csv
+    #touch results/${t}_${count}.csv
+    echo "${count}"
     timeout 1800 python3 solve_ISR.py "${graphpath}" "${solpath}" "${t}" "${count}" > results/${t}_${count}.csv
     #python3 make_csv_from_log.py "${t}_${count}"
     echo "results/${graph}_${sol}.csv"
