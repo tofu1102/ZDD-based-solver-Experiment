@@ -9,8 +9,8 @@ y=[]
 z=[]
 
 for xyz in targetData:
-    x.append(xyz[3])
-    y.append(xyz[1])
+    x.append(xyz[1])
+    y.append(xyz[3])
     z.append(xyz[2])
 
 # print(x)
