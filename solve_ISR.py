@@ -25,7 +25,7 @@ if __name__ == "__main__":
     sol_path = sys.argv[2]
     no = int(sys.argv[4])
     V, E, S, T = get_instance.get_instance(graph_path, sol_path)
-    if V > 300:
+    if len(V) > 300:
         exit()
     @timeout(int(sys.argv[3]))
     def _solve_ISR(V, E, S, T, graph_path, sol_path):
